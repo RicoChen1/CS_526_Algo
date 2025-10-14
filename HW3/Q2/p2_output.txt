@@ -1,2 +1,0 @@
-Input: abcab
-Output: a, b, c, ab, bc, ca, abc, bca, cab, abca, bcab, abcab -> 12
