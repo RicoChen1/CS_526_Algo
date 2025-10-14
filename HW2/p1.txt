@@ -1,0 +1,5 @@
+For simple linked list, without a ptr to the tail.
+If we need to append a new element to the tail of such data structure, we must starting from the very beginning, explore a node by a node, until the last node, then insert there.
+If the "chain" is very long, it will take long time.
+Notice joining new element at the end of linked list might be a very common operation. And setting up a tail ptr has very small resource cost
+After we set the tail ptr, such end tail operation only cost O(1) time instead of O(n)
