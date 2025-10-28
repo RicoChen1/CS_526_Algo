@@ -1,10 +1,12 @@
-Part_A:
-Pre Order Tree Traversal
- 
- First visit the root node.
- Then traverse the left subtree.
- Then traverse the right subtree.
+# Part_A: AI Assisted MD Format
 
+## Pre Order Tree Traversal
+
+- First visit the root node.
+- Then traverse the left subtree.
+- Then traverse the right subtree.
+
+```
         A
       / | \
      B  C  D
@@ -12,8 +14,10 @@ Pre Order Tree Traversal
    E   F     G
   /   /
  H   I
+```
 AI Generated Tree based on prof's picture
 
+```
 A   // the root
 B   // A's left sub
 E   // B's left sub
@@ -28,16 +32,18 @@ Return back to A as C dont have child
 D   // A's last sub
 G
 END
+```
 
 Hence, the pre order traversal of the tree is:
-A → B → E → H → F → I → C → D → G
+`A -> B -> E -> H -> F -> I -> C -> D -> G`
 
+## Part B:
 
-Part B:
-BFS: Level Order
+### BFS: Level Order
 Based on level order(layer). Each layer left to right.
 Start from the root.
 
+```
         A
       / | \
      B  C  D
@@ -45,13 +51,31 @@ Start from the root.
    E   F     G
   /   /
  H   I
+```
 
+```
 L1: A
 L2: B C D
 L3: E F G
 L4: H I
+```
 
 Hence, the level order traversal of the tree is:
-A → B → C → D → E → F → G → H → I
+`A -> B -> C -> D -> E -> F -> G -> H -> I`
 
-PostOrder Traversal
+### PostOrder Traversal
+Left → Right → Root
+
+```
+        A
+      / | \
+     B  C  D
+    / \     \
+   E   F     G
+  /   /
+ H   I
+```
+
+PostOrder: `H -> E -> I -> F -> B -> C -> G -> D -> A`
+
+
