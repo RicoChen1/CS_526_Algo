@@ -1,8 +1,0 @@
-Sequence of stack call:
-
-doIt(12) -> call doIt 3
-doIt 3   -> call doIt 5
-doIt 5   -> call doIt 2
-doIt 2   -> call doIt None
-doIt None-> return
-print  2 5 3 12 
