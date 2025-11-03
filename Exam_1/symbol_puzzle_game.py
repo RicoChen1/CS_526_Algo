@@ -1,43 +1,47 @@
 import sys
 import math
 
-def validate(board, symbols):
+def is_valid_board(board, symbols):
     n = len(board)
+    # The size of the sub-board is the square root of n
     sub_board_size = int(math.sqrt(n))
 
-    # Check rows & columns uniqueness
+    # This loop checks for uniqueness in rows and columns.
+    # It iterates from i = 0 to n-1.
     for i in range(n):
+        # These sets are used to keep track of the symbols encountered in the current row and column.
+        # They are reset for each new row/column.
         row_symbols = set()
         col_symbols = set()
         for j in range(n):
-            # Check duplicates @ current row
+            # Check for duplicates in the current row
             if board[i][j] != '.':
                 if board[i][j] in row_symbols:
-                    return False  # if found duplicate in row
+                    return False  # A duplicate is found in the current row
                 row_symbols.add(board[i][j])
             
-            # Check duplicates at current column
+            # Check for duplicates in the current column
             if board[j][i] != '.':
                 if board[j][i] in col_symbols:
-                    return False  # if found duplicate in column
+                    return False  # A duplicate is found in the current column
                 col_symbols.add(board[j][i])
 
-    # Check sub-boards uniqueness
-    # Iterate board in steps of sub_board_size, visit each sub-board
+    # This loop checks for uniqueness in each sub-board.
+    # It iterates through the board in steps of sub_board_size, effectively visiting the top-left corner of each sub-board.
     for i in range(0, n, sub_board_size):
         for j in range(0, n, sub_board_size):
             sub_board_symbols = set()
-            # Iterate through each cell of the sub-board
+            # This nested loop iterates through each cell of the current sub-board.
             for row in range(i, i + sub_board_size):
                 for col in range(j, j + sub_board_size):
                     if board[row][col] != '.':
                         if board[row][col] in sub_board_symbols:
-                            return False  # Found a duplicate in the sub-board
+                            return False  # A duplicate is found in the sub-board
                         sub_board_symbols.add(board[row][col])
     
-    return True # here the board is valid
+    return True # If all checks pass, the board is valid
 
-# AI generated main and entry point for the script
+# The main function reads the input file, parses the board, and calls the validation function.
 def main():
 
     if len(sys.argv) != 2:
