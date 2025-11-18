@@ -1,4 +1,8 @@
-# Problem 1. Binary Search Tree
+# HW5 File Structure
+- Including problem description pdf, 3 problem solution python, testing txt document, a README.md, and a md file This is a partial record of my conversation with the AI, presented as a record of my AI usage (in Chinese).
+
+
+# Q1. Binary Search Tree
 
 ## Algo Description
 
@@ -18,22 +22,22 @@
 ## Run Tests
 
 ```powershell
-python HW5/bst.py
+python HW5/bst_YChen_HW5.py // No input required
 ```
 
 ## Note:
 
 - Duplicate values get auto ignored.
 - Empty tree prints `(empty)`.
-- For reproducible run, open `HW5/bst.py`, uncomment `random.seed(42)`.
+- For reproducible run, uncomment `bst.py`file `random.seed(42)`.
 
-# Q. Vowel-only Morse Sequences
+# Q2. Vowel-only Morse Sequence
 
 ## Algo Description
 
 1. Read input file: first line is length `n`, second line is a string of `.` and `-`.
-2. Use International Morse vowel codes: `A=.-`, `E=.`, `I=..`, `O=---`, `U=..-`.
-3. Count the number of ways to split the string into these vowel codes using DP.
+2. Morse Note: `A=.-`, `E=.`, `I=..`, `O=---`, `U=..-`.
+3. Count number of ways to split string into these vowel codes using DP.
 4. Print results in exact format:
    - `File Input: vowel_input<k>.txt`
    - `The Number of Vowel combinations is:  <count>`
@@ -41,13 +45,10 @@ python HW5/bst.py
 ## To Run Tests
 
 ```powershell
-python HW5/vowel_morse.py HW5/vowel_input1.txt
-python HW5/vowel_morse.py HW5/vowel_input2.txt
-python HW5/vowel_morse.py HW5/vowel_input3.txt
-python HW5/vowel_morse.py HW5/vowel_input4.txt
+python HW5/vowel_morse_YChen_HW5.py HW5/vowel_inputX.txt
 ```
 
-## Note
+## Note:
 
 - If the first line length differs from actual string length, program uses the string as-is.
 - DP runs in `O(n * 5)` since 5 vowel codes are checked.
@@ -66,14 +67,15 @@ python HW5/vowel_morse.py HW5/vowel_input4.txt
 ## To Run Tests
 
 ```powershell
-python HW5/longest_seq.py HW5/longest_seq1.txt
-python HW5/longest_seq.py HW5/longest_seq2.txt
-python HW5/longest_seq.py HW5/longest_seq3.txt
-python HW5/longest_seq.py HW5/longest_seq4.txt
-# HW5/longest_seq5.txt 和 HW5/longest_seq6.txt 可能非常大，运行时间较长
+python HW5/longest_seq_YChen_HW5.py HW5/longest_seq1.txt
+python HW5/longest_seq_YChen_HW5.py HW5/longest_seq2.txt
+python HW5/longest_seq_YChen_HW5.py HW5/longest_seq3.txt
+python HW5/longest_seq_YChen_HW5.py HW5/longest_seq4.txt
+# 5 and 6 suffer from long running time. I'm not sure if the program has entered an infinite loop/halting.
+# Well it's actually I set my computer to quite mode that's why it's running so slow.
+# Now it's solved
 ```
 
 ## Notes
 
-- Algorithm uses dynamic programming with prefix maxima, time `O(n*m)` and space `O(n*m)`.
-- Large inputs (e.g., 10k by 10k) can take long. Do not interrupt; consider running smaller files for screenshots.
+- Large inputs (e.g., 10k by 10k) can take forever.
