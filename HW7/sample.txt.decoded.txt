@@ -1,0 +1,3 @@
+A quick brown fox jumps over the lazy dog. 1234567890
+Huffman coding is fun! Repeat: a quick brown fox jumps over the lazy dog.
+End of sample.
